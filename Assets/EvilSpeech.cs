@@ -8,6 +8,7 @@ public class EvilSpeech : MonoBehaviour
   public int speed = 10;
   Rigidbody rb;
   public InputAction moveAction;
+  public int health = 3;
 
 
   void Start()
@@ -39,6 +40,20 @@ public class EvilSpeech : MonoBehaviour
     else
     {
       print("Lynet McNejjj...");
+    }
+
+
+    if (health <= 0)
+    {
+      Destroy(gameObject);
+    }
+  }
+  
+  void OnCollisionEnter(Collision other)
+  {
+    if (other.gameObject.CompareTag("Coin"))
+    {
+      health -= 1;
     }
   }
 }

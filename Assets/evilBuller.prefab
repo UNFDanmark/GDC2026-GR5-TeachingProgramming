@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 822255285777750635}
   - component: {fileID: 6104196177146242554}
   - component: {fileID: 2942068600905854909}
-  - component: {fileID: 1616385160483556576}
-  m_Layer: 0
-  m_Name: Sphere
+  - component: {fileID: -922272910085423167}
+  - component: {fileID: 542138799180857069}
+  m_Layer: 8
+  m_Name: evilBuller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -113,7 +114,7 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &1616385160483556576
+--- !u!54 &-922272910085423167
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -140,3 +141,15 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &542138799180857069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3271191620382567111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8990200d86b3ffd4da96d167e8476287, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'

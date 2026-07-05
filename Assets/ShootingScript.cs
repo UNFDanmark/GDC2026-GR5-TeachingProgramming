@@ -4,11 +4,12 @@ using UnityEngine.InputSystem;
 
 public class ShootingScript : MonoBehaviour
 {
-    public Rigidbody bulletPrefab;
+    public GameObject bulletPrefab;
     public InputAction shoot;
     public GameObject point;
     public float ballShooterCooldown = 0.5f;
     float cooldownLeft;
+    public float power = 2000;
     
     void Start()
     {
@@ -21,8 +22,10 @@ public class ShootingScript : MonoBehaviour
 
         if (shoot.WasPerformedThisFrame() && cooldownLeft <= 0)
         { 
-            Instantiate(bulletPrefab, point.transform.position, Quaternion.identity);
             cooldownLeft = ballShooterCooldown;
+            
+            GameObject bullet = Instantiate(bulletPrefab, point.transform.position, Quaternion.identity);
+            bullet.GetComponent<Rigidbody>().AddForce(Vector3.forward*power);
         }
     }
 }
