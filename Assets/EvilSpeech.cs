@@ -9,11 +9,14 @@ public class EvilSpeech : MonoBehaviour
   Rigidbody rb;
   public InputAction moveAction;
   public int health = 3;
-
+  public Animator animation;
+  public InputAction turnAction;
+  public Transform transformToMoveAbout;
 
   void Start()
   {
     moveAction.Enable();
+    turnAction.Enable();
     rb = GetComponent<Rigidbody>();
   }
 
@@ -22,14 +25,16 @@ public class EvilSpeech : MonoBehaviour
     Vector2 moveInput = moveAction.ReadValue<Vector2>();
 
     Vector3 newVelocity = rb.linearVelocity;
+    newVelocity.x = 0;
+    newVelocity.z = 0;
 
-    newVelocity.x = moveInput.x * speed;
-    newVelocity.z = moveInput.y * speed;
+    var newForward = transformToMoveAbout.forward * (moveInput.y * speed);
+    var newRight = transformToMoveAbout.right * (moveInput.x * speed);
+    newVelocity += newRight + newForward;
 
+    
     rb.linearVelocity = newVelocity;
-    
-    
-    
+    animation.SetFloat("Speed", rb.linearVelocity.magnitude);
     
     
     if (speed > 8)

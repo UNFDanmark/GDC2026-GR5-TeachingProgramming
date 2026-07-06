@@ -4,7 +4,7 @@ public class GoldenSuicidalAutoamingRoombaSpawner7000Scrupt : MonoBehaviour
 {
     public GameObject GoldenSuicidalAutoamingRoomba;
     float cooldownLeft;
-    float cooldown = 1;
+    public float cooldown = 1;
     
     void Start()
     {

@@ -10,10 +10,14 @@ public class ShootingScript : MonoBehaviour
     public float ballShooterCooldown = 0.5f;
     float cooldownLeft;
     public float power = 2000;
+    public Animator animation;
+    public AudioSource AudioSource;
     
     void Start()
     {
         shoot.Enable();
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     void Update()
@@ -25,7 +29,9 @@ public class ShootingScript : MonoBehaviour
             cooldownLeft = ballShooterCooldown;
             
             GameObject bullet = Instantiate(bulletPrefab, point.transform.position, Quaternion.identity);
-            bullet.GetComponent<Rigidbody>().AddForce(Vector3.forward*power);
+            bullet.GetComponent<Rigidbody>().AddForce(transform.forward * power);
+            animation.SetTrigger("Shoot");
+            
         }
     }
 }

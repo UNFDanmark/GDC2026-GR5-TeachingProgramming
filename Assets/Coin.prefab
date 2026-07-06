@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3789044117322367374}
   - component: {fileID: 1155746097852036836}
   - component: {fileID: -8187035434717841056}
+  - component: {fileID: -1688805808253071895}
   m_Layer: 0
   m_Name: Coin
   m_TagString: Coin
@@ -94,6 +95,24 @@ NavMeshAgent:
   m_BaseOffset: 1.0000006
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &-1688805808253071895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4268792477568853379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 685b8b589b649e645b80c1d01c0eb745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::pewpew
+  renderDistance: 8
+  eyes: {fileID: 84878239892448800}
+  bulletPrefab: {fileID: 3271191620382567111, guid: 921350891dc8f73489fd7946657fa6de, type: 3}
+  point: {fileID: 7541710705236219398}
+  ballShooterCooldown: 0.5
+  power: 2000
 --- !u!1 &7541710705236219398
 GameObject:
   m_ObjectHideFlags: 0
@@ -121,7 +140,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0.008726465, y: -0.00000076147245, z: -0.00008725681, w: -0.999962}
   m_LocalPosition: {x: 0, y: 0.262, z: 0.663}
-  m_LocalScale: {x: 1.0000069, y: 1.3954322, z: 1.0000792}
+  m_LocalScale: {x: 1, y: 1.3954322, z: 1.0000792}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3848274447490950305}
